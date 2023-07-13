@@ -1,0 +1,133 @@
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 90%;
+
+  margin: auto;
+  margin-bottom: 3rem;
+}
+.main-title {
+  letter-spacing: 0.5px;
+  font-weight: bolder;
+}
+.card-background {
+  background-color: #fff;
+  padding: 1rem 0.5rem;
+}
+.speaker-heading {
+  text-transform: capitalize;
+}
+.hosted-by {
+  text-transform: capitalize;
+  font-weight: 400;
+  margin: -13px auto;
+}
+.marketing-expert {
+  font-weight: bold;
+}
+.left-detials img {
+  width: 95%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.details-sec {
+  color: rgba(0, 0, 0, 0.89);
+}
+.desc {
+  margin-right: 2px;
+  margin-top: -12px;
+}
+.additional-info {
+  text-transform: capitalize;
+}
+.timer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+  /* justify-content: space-around; */
+}
+.rupes {
+  margin-left: 2rem;
+  font-weight: bold;
+}
+.inner {
+  margin-left: 5px;
+}
+svg {
+  margin-top: 27px;
+}
+.to-time {
+  margin: -11px 2px;
+}
+.dress-code {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.dress-code span {
+  font-weight: normal;
+  margin: -12px auto;
+}
+.age-restriction {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.age-restriction span {
+  font-weight: normal;
+  margin: -12px auto;
+}
+.event-tags {
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+.marketing-btn {
+  background-color: rgb(245, 87, 87);
+  outline: none;
+  border: none;
+  color: white;
+  text-transform: capitalize;
+  padding: 6px 6px;
+  border-radius: 3px;
+  margin-right: 11px;
+}
+.right-detials {
+  margin-top: 3rem;
+  width: 80%;
+
+  margin-left: auto;
+}
+.speaker-card {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+.parent-cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.speaker-card h3 {
+  margin: -1px auto;
+}
+.speaker-card p {
+  margin: 3px auto;
+}
+.rsvp {
+  padding: 8px 60px;
+  background-color: rgb(245, 87, 87);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin-left: 30%;
+  margin-top: 3rem;
+  /* margin: initial auto; */
+}
+/* Adding media query for tablet */
+@media screen and (max-width: 768px) {
+  .details {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

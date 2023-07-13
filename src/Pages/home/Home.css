@@ -1,0 +1,38 @@
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  border: 2px solid red;
+}
+select {
+  padding: 3px 15px;
+  background-color: whitesmoke;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.show-card {
+  display: grid;
+  align-items: center;
+  margin-top: 1.5rem;
+  grid-gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+}
+
+/* Adding media query for tablet */
+@media screen and (max-width: 768px) {
+  .show-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Adding media query for mobile */
+@media screen and (max-width: 480px) {
+  .show-card {
+    grid-template-columns: 1fr;
+    margin-left: 10%;
+  }
+}

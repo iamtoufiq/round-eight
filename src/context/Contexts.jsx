@@ -2,14 +2,15 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { fakeFetch } from "../Database";
 const context = createContext();
 const Contexts = ({ children }) => {
+  const [data, setData] = useState([]);
   const fetchingData = async () => {
     const { data } = await fakeFetch("https://example.com/api/menu");
-    console.log(data.menu);
+    setData(data.meetups);
   };
   useEffect(() => {
     fetchingData();
   }, []);
-  return <context.Provider value={"lala"}>{children}</context.Provider>;
+  return <context.Provider value={{ data }}>{children}</context.Provider>;
 };
 //global hook
 const useGlobalHook = () => {
