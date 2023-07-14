@@ -6,8 +6,6 @@ import Home from "./Pages/home/Home";
 import "./App.css";
 import Details from "./Pages/details/Details";
 const App = () => {
-  // const data = useGlobalHook();
-  // console.log(data);
   return (
     <div>
       <Header />
