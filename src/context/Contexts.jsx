@@ -30,10 +30,7 @@ const Contexts = ({ children }) => {
   useEffect(() => {
     fetchingData();
   }, []);
-  // function for rsvp
-  // const handlersvp = () => {
-  //   console.log("sad");
-  // };
+
   const handleSearch = () => {
     let newData = original.filter((curData) => {
       return curData.title.toLowerCase().includes(search.toLowerCase());
@@ -41,12 +38,23 @@ const Contexts = ({ children }) => {
     setData(newData);
   };
   // funcion to submit the popup
-  const handleSubmitPopup = (val) => {
+  const handleSubmitPopup = (val, id) => {
     console.log("handle");
-    console.log(val);
+    console.log(val, id);
+
+    const index = original.findIndex((item) => item.id === id);
+    // console.log(index);
+    if (index !== -1 && data[index].rsvp === undefined) {
+      const updatedOriginal = [...data];
+      updatedOriginal[index] = { ...updatedOriginal[index], rsvp: val };
+      console.log("updatedOriginal");
+      console.log(updatedOriginal);
+      setData([...updatedOriginal]);
+    }
 
     setShow(false);
   };
+
   useEffect(() => {
     handleSearch();
   }, [search]);

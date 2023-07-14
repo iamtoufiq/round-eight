@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./PopUp.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { useGlobalHook } from "../../context/Contexts";
-const PopUp = () => {
+const PopUp = ({ idd }) => {
   const { setShow, handleSubmitPopup, setOriginal } = useGlobalHook();
   const [input, setInput] = useState("");
   const [password, setPassword] = useState("");
@@ -19,6 +19,7 @@ const PopUp = () => {
             placeholder="Name"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            required
           />
         </div>
         <div className="form-group">
@@ -28,17 +29,22 @@ const PopUp = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
         <p className="info">* You have to make the payment at the venue</p>
+
         <button
           className="button"
           type="submit"
           onClick={() =>
-            handleSubmitPopup({
-              input: input,
-              password,
-            })
+            handleSubmitPopup(
+              {
+                input: input,
+                password,
+              },
+              idd
+            )
           }
         >
           RSVP

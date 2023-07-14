@@ -127,6 +127,8 @@ svg {
   margin-left: 30%;
   margin-top: 3rem;
   cursor: pointer;
+  font-weight: bold;
+  color: wheat;
 }
 /* Adding media query for tablet */
 @media screen and (max-width: 768px) {

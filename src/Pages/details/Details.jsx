@@ -12,7 +12,8 @@ const Details = () => {
   const filterData = data.filter((currData) => {
     return currData?.id == ids;
   });
-
+  console.log("filterData");
+  console.log(filterData);
   return (
     <>
       {loading && <h2>Loading..</h2>}
@@ -54,8 +55,37 @@ const Details = () => {
               <div className="timer">
                 <AccessTimeIcon />
                 <div className="inner">
-                  <p>{filterData[0]?.eventStartTime} to </p>
-                  <p className="to-time">{filterData[0]?.eventEndTime}</p>
+                  {/* {formattedDate} */}
+                  <p>
+                    {!!filterData[0]?.eventStartTime && (
+                      <>
+                        {new Intl.DateTimeFormat("en-US", {
+                          weekday: "long",
+                          month: "long",
+                          day: "numeric",
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                        }).format(new Date(filterData[0]?.eventStartTime))}
+                        {" to "}
+                      </>
+                    )}
+                  </p>
+
+                  <p>
+                    {!!filterData[0]?.eventEndTime && (
+                      <>
+                        {new Intl.DateTimeFormat("en-US", {
+                          weekday: "long",
+                          month: "long",
+                          day: "numeric",
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                        }).format(new Date(filterData[0]?.eventEndTime))}
+                      </>
+                    )}
+                  </p>
                 </div>
               </div>
               <div className="timer">
@@ -84,13 +114,19 @@ const Details = () => {
                     );
                   })}
                 </div>
-                <button className="rsvp" onClick={() => setShow(true)}>
-                  RSVP
-                </button>
+
+                {!!filterData[0]?.rsvp ? (
+                  <button className="rsvp">Already RSVped</button>
+                ) : (
+                  <button className="rsvp" onClick={() => setShow(true)}>
+                    RSVP
+                  </button>
+                )}
+                {/* {!!filterData[0]?.rsvp && <h1>he</h1>} */}
               </div>
             )}
           </div>
-          {show && <PopUp />}
+          {show && <PopUp idd={filterData[0]?.id} />}
         </div>
       )}
     </>
