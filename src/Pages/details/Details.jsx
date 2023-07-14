@@ -60,8 +60,8 @@ const Details = () => {
                     {!!filterData[0]?.eventStartTime && (
                       <>
                         {new Intl.DateTimeFormat("en-US", {
-                          weekday: "long",
-                          month: "long",
+                          weekday: "short",
+                          month: "short",
                           day: "numeric",
                           hour: "numeric",
                           minute: "numeric",
@@ -76,8 +76,8 @@ const Details = () => {
                     {!!filterData[0]?.eventEndTime && (
                       <>
                         {new Intl.DateTimeFormat("en-US", {
-                          weekday: "long",
-                          month: "long",
+                          weekday: "short",
+                          month: "short",
                           day: "numeric",
                           hour: "numeric",
                           minute: "numeric",
