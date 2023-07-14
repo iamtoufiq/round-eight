@@ -115,13 +115,15 @@ const Details = () => {
                   })}
                 </div>
 
-                {!!filterData[0]?.rsvp ? (
-                  <button className="rsvp">Already RSVped</button>
-                ) : (
-                  <button className="rsvp" onClick={() => setShow(true)}>
-                    RSVP
-                  </button>
-                )}
+                {new Date() < new Date(filterData[0]?.eventEndTime) &&
+                  (!!filterData[0]?.rsvp ? (
+                    <button className="rsvp">Already RSVped</button>
+                  ) : (
+                    <button className="rsvp" onClick={() => setShow(true)}>
+                      RSVP
+                    </button>
+                  ))}
+
                 {/* {!!filterData[0]?.rsvp && <h1>he</h1>} */}
               </div>
             )}

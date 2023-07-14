@@ -21,7 +21,17 @@ const Card = ({ meetupData }) => {
           alt="Card"
         />
         <div className="card-body">
-          <p className="card-text">{meetupData?.eventStartTime}</p>
+          <p className="card-text">
+            {new Intl.DateTimeFormat("en-US", {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+              hour: "numeric",
+              minute: "numeric",
+              hour12: true,
+            }).format(new Date(meetupData?.eventStartTime))}
+          </p>
+
           <h3 className="titile-name">{meetupData?.title}</h3>
         </div>
       </div>
